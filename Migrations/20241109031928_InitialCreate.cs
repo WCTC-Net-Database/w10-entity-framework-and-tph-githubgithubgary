@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace W9_assignment_template.Migrations
+namespace W10_assignment_template.Migrations
 {
     public partial class InitialCreate : Migration
     {

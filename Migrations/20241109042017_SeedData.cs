@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace W9_assignment_template.Migrations
+namespace W10_assignment_template.Migrations
 {
     public partial class SeedData : Migration
     {
@@ -23,8 +23,10 @@ namespace W9_assignment_template.Migrations
 
             // Insert Characters
             migrationBuilder.Sql("INSERT INTO Characters (Id, Name, Level, RoomId, Discriminator, AggressionLevel) VALUES (1, 'Bob Goblin', 1, 1, 'Goblin', 5)");
-            migrationBuilder.Sql("INSERT INTO Characters (Id, Name, Level, RoomId, Discriminator, AggressionLevel) VALUES (2, 'Gob Boglin', 2, 1, 'Goblin', 7)");
+            migrationBuilder.Sql("INSERT INTO Characters (Id, Name, Level, RoomId, Discriminator, AggressionLevel) VALUES (2, 'Herb Goblin', 2, 1, 'Goblin', 7)");
             migrationBuilder.Sql("INSERT INTO Characters (Id, Name, Level, RoomId, Discriminator, Experience) VALUES (3, 'Sir Lancelot', 1, 2, 'Player', 100)");
+            migrationBuilder.Sql("INSERT INTO Characters (Id, Name, Level, RoomId, Discriminator, Experience) VALUES (4, 'Merlin', 1, 2, 'Player', 1000)");
+
 
             // Disable identity insert for Characters
             migrationBuilder.Sql("SET IDENTITY_INSERT Characters OFF");

@@ -3,11 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NReco.Logging.File;
-using W9_assignment_template.Data;
-using W9_assignment_template.Helpers;
-using W9_assignment_template.Services;
+using W10_assignment_template.Data;
+using W10_assignment_template.Helpers;
+using W10_assignment_template.Services;
 
-namespace W9_assignment_template;
+namespace W10_assignment_template;
 
 public static class Startup
 {

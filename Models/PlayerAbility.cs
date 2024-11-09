@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace W10_assignment_template.Models
 {
-    public class Goblin : Character
+    public class PlayerAbility : Ability
     {
-        // Common properties for all monsters
-        public int AggressionLevel { get; set; }
-
+        public int Shove { get; set; }
     }
 }

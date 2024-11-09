@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using W9_assignment_template.Helpers;
+using W10_assignment_template.Helpers;
 
-namespace W9_assignment_template.Data
+namespace W10_assignment_template.Data
 {
     public class GameContextFactory : IDesignTimeDbContextFactory<GameContext>
     {

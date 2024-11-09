@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using W9_assignment_template.Data;
+using W10_assignment_template.Data;
 
 #nullable disable
 
-namespace W9_assignment_template.Migrations
+namespace W10_assignment_template.Migrations
 {
     [DbContext(typeof(GameContext))]
-    [Migration("20241028014516_SeedData")]
-    partial class SeedData
+    [Migration("20241109031928_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,7 +23,7 @@ namespace W9_assignment_template.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("W9_assignment_template.Models.Character", b =>
+            modelBuilder.Entity("W10_assignment_template.Models.Character", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace W9_assignment_template.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Character");
                 });
 
-            modelBuilder.Entity("W9_assignment_template.Models.Room", b =>
+            modelBuilder.Entity("W10_assignment_template.Models.Room", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -75,9 +75,9 @@ namespace W9_assignment_template.Migrations
                     b.ToTable("Rooms");
                 });
 
-            modelBuilder.Entity("W9_assignment_template.Models.Goblin", b =>
+            modelBuilder.Entity("W10_assignment_template.Models.Goblin", b =>
                 {
-                    b.HasBaseType("W9_assignment_template.Models.Character");
+                    b.HasBaseType("W10_assignment_template.Models.Character");
 
                     b.Property<int>("AggressionLevel")
                         .HasColumnType("int");
@@ -85,9 +85,9 @@ namespace W9_assignment_template.Migrations
                     b.HasDiscriminator().HasValue("Goblin");
                 });
 
-            modelBuilder.Entity("W9_assignment_template.Models.Player", b =>
+            modelBuilder.Entity("W10_assignment_template.Models.Player", b =>
                 {
-                    b.HasBaseType("W9_assignment_template.Models.Character");
+                    b.HasBaseType("W10_assignment_template.Models.Character");
 
                     b.Property<int>("Experience")
                         .HasColumnType("int");
@@ -95,9 +95,9 @@ namespace W9_assignment_template.Migrations
                     b.HasDiscriminator().HasValue("Player");
                 });
 
-            modelBuilder.Entity("W9_assignment_template.Models.Character", b =>
+            modelBuilder.Entity("W10_assignment_template.Models.Character", b =>
                 {
-                    b.HasOne("W9_assignment_template.Models.Room", "Room")
+                    b.HasOne("W10_assignment_template.Models.Room", "Room")
                         .WithMany("Characters")
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -106,7 +106,7 @@ namespace W9_assignment_template.Migrations
                     b.Navigation("Room");
                 });
 
-            modelBuilder.Entity("W9_assignment_template.Models.Room", b =>
+            modelBuilder.Entity("W10_assignment_template.Models.Room", b =>
                 {
                     b.Navigation("Characters");
                 });

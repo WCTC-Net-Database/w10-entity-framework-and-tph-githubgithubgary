@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using W9_assignment_template.Data;
+using W10_assignment_template.Data;
 
-namespace W9_assignment_template.Services;
+namespace W10_assignment_template.Services;
 
 public class Menu
 {
@@ -10,6 +10,7 @@ public class Menu
     public Menu(GameContext gameContext)
     {
         _gameContext = gameContext;
+//        _gameContext.Seed();
     }
 
     public void Show()
@@ -18,7 +19,7 @@ public class Menu
         {
             Console.WriteLine("1. Display Rooms");
             Console.WriteLine("2. Display Characters");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("0. Exit");
             Console.Write("Enter your choice: ");
 
             var choice = Console.ReadLine();
@@ -31,7 +32,7 @@ public class Menu
                 case "2":
                     DisplayCharacters();
                     break;
-                case "3":
+                case "0":
                     return;
                 default:
                     Console.WriteLine("Invalid option, please try again.");
@@ -70,5 +71,20 @@ public class Menu
             Console.WriteLine("No characters available.");
         }
     }
-
+    public void DisplayCharactersAbilities()
+    {
+        var characters = _gameContext.Characters.ToList();
+        if (characters.Any())
+        {
+            Console.WriteLine("\nCharacters:");
+            foreach (var character in characters)
+            {
+                Console.WriteLine($"Character ID: {character.Id}, Name: {character.Name}, Level: {character.Level}, Room ID: {character.RoomId}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("No characters available.");
+        }
+    }
 }

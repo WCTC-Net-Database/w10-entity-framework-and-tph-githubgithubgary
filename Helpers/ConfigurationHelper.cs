@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace W9_assignment_template.Helpers
+namespace W10_assignment_template.Helpers
 {
     public static class ConfigurationHelper
     {
